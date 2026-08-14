@@ -1,24 +1,26 @@
-# pg-policy-samples
+# pg-agent-policy-samples
 
-Runnable SQL samples, domain packs, PEP middleware, and user documentation for [`pg_policy`](https://github.com/rahiakil/pg-policy).
+Runnable SQL samples, domain packs, PEP middleware, and user documentation for [`pg_agent_policy`](https://github.com/rahiakil/pg-agent-policy).
 
-This repository is the artifact companion to the working paper [Policy Beside the Data](https://github.com/Agentic-Memory-Foundation/agentic-policy). The extension kernel lives in [rahiakil/pg-policy](https://github.com/rahiakil/pg-policy). Clone this tree for packs and examples:
+> Not the Postgres catalog `pg_catalog.pg_policy` (RLS). This is agent/tool policy samples for the `pg_agent_policy` extension.
+
+This repository is the artifact companion to the working paper [Toward Policy Beside the Data](https://github.com/Agentic-Memory-Foundation/agentic-policy). The extension kernel lives in [rahiakil/pg-agent-policy](https://github.com/rahiakil/pg-agent-policy). Clone this tree for packs and examples:
 
 ```bash
-git clone git@github.com:Agentic-Memory-Foundation/pg-policy-samples.git
+git clone git@github.com:Agentic-Memory-Foundation/pg-agent-policy-samples.git
 ```
 
-HTTPS: https://github.com/Agentic-Memory-Foundation/pg-policy-samples
+HTTPS: https://github.com/Agentic-Memory-Foundation/pg-agent-policy-samples
 
 ## Prerequisites
 
 Install the extension first:
 
 ```bash
-git clone https://github.com/rahiakil/pg-policy.git
-cd pg-policy
+git clone https://github.com/rahiakil/pg-agent-policy.git
+cd pg-agent-policy
 make install
-psql -d mydb -c "CREATE EXTENSION pg_policy;"
+psql -d mydb -c "CREATE EXTENSION pg_agent_policy;"
 ```
 
 PostgreSQL 14+ and a PGXS toolchain (`pg_config` on `PATH`). Details: [INSTALL.md](INSTALL.md).
@@ -48,10 +50,10 @@ psql "$DATABASE_URL" -f examples/packs/00-baseline.sql
 psql "$DATABASE_URL" -f examples/packs/analytics.sql
 ```
 
-Load **baseline first**, then one domain pack. Packs do not flip `enforcement_mode`. Start in `log_only`, watch `pg_policy.decision_log`, then `enforce`.
+Load **baseline first**, then one domain pack. Packs do not flip `enforcement_mode`. Start in `log_only`, watch `pg_agent_policy.decision_log`, then `enforce`.
 
 ```sql
-SELECT pg_policy.set_setting('enforcement_mode', 'log_only');
+SELECT pg_agent_policy.set_setting('enforcement_mode', 'log_only');
 ```
 
 ## PEP contract
@@ -85,11 +87,11 @@ Appendix A of the working paper reprints excerpts from this tree:
 | Baseline pack | `examples/packs/00-baseline.sql` |
 | PEP middleware | `examples/integrations/evaluate_middleware.py` |
 
-Catalog, `parse_apl`, and `evaluate` live in the extension (`sql/pg_policy--0.1.0.sql`). Matcher oracle: [`agentic-policy/experiments/policy_engine.py`](https://github.com/Agentic-Memory-Foundation/agentic-policy).
+Catalog, `parse_apl`, and `evaluate` live in the extension (`sql/pg_agent_policy--0.1.0.sql`). Matcher oracle: [`agentic-policy/experiments/policy_engine.py`](https://github.com/Agentic-Memory-Foundation/agentic-policy).
 
 ## Related
 
-- Extension: https://github.com/rahiakil/pg-policy
+- Extension: https://github.com/rahiakil/pg-agent-policy
 - Working paper: https://github.com/Agentic-Memory-Foundation/agentic-policy
 
 License: [PostgreSQL License](LICENSE).

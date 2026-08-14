@@ -1,22 +1,22 @@
-# pg_policy
+# pg_agent_policy
 
-`pg_policy` adds an **Agent Policy Language (APL)** to PostgreSQL for AI-agent guardrails, guidance, and session-aware controls. It complements—not replaces—row-level security.
+`pg_agent_policy` adds an **Agent Policy Language (APL)** to PostgreSQL for AI-agent guardrails, guidance, and session-aware controls. It complements—not replaces—row-level security.
 
 ## Install
 
-The kernel is [rahiakil/pg-policy](https://github.com/rahiakil/pg-policy), not this samples tree.
+The kernel is [rahiakil/pg-agent-policy](https://github.com/rahiakil/pg-agent-policy), not this samples tree.
 
 ```bash
-git clone https://github.com/rahiakil/pg-policy.git
-cd pg-policy
+git clone https://github.com/rahiakil/pg-agent-policy.git
+cd pg-agent-policy
 make install
-psql -c "CREATE EXTENSION pg_policy;"
+psql -c "CREATE EXTENSION pg_agent_policy;"
 ```
 
 ## Quick start
 
 ```sql
-SELECT pg_policy.upsert_policy('block_ddl', $apl$
+SELECT pg_agent_policy.upsert_policy('block_ddl', $apl$
 forbid
   principal agent "research_bot"
   action tool "execute_sql"
@@ -24,9 +24,9 @@ forbid
   reason "Research agents may not run DDL"
 $apl$);
 
-SELECT pg_policy.set_setting('enforcement_mode', 'enforce');
+SELECT pg_agent_policy.set_setting('enforcement_mode', 'enforce');
 
-SELECT pg_policy.evaluate(
+SELECT pg_agent_policy.evaluate(
   'agent', 'research_bot', 'tool', 'execute_sql',
   '*', '*', '{"statement_type":"DROP"}'::jsonb
 );
