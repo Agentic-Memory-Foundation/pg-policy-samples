@@ -1,6 +1,6 @@
 # Documentation index
 
-User-facing samples and docs for [`pg_agent_policy`](https://github.com/rahiakil/pg-agent-policy). The extension kernel and research notes stay in that repository; this tree is packs, examples, and onboarding.
+User-facing samples and docs for [`pg_agent_policy`](https://github.com/rahiakil/pg-policy). The extension kernel and research notes stay in that repository; this tree is packs, examples, and onboarding.
 
 ## Start here
 
@@ -25,5 +25,5 @@ User-facing samples and docs for [`pg_agent_policy`](https://github.com/rahiakil
 
 ## Related repositories
 
-- Extension: https://github.com/rahiakil/pg-agent-policy
+- Extension: https://github.com/rahiakil/pg-policy
 - Working paper: https://github.com/Agentic-Memory-Foundation/agentic-policy

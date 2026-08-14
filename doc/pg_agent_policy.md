@@ -4,11 +4,11 @@
 
 ## Install
 
-The kernel is [rahiakil/pg-agent-policy](https://github.com/rahiakil/pg-agent-policy), not this samples tree.
+The kernel is [rahiakil/pg-agent-policy](https://github.com/rahiakil/pg-policy), not this samples tree.
 
 ```bash
-git clone https://github.com/rahiakil/pg-agent-policy.git
-cd pg-agent-policy
+git clone https://github.com/rahiakil/pg-policy.git
+cd pg-policy
 make install
 psql -c "CREATE EXTENSION pg_agent_policy;"
 ```

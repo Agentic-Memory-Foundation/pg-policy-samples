@@ -1,6 +1,6 @@
 # Installing pg_agent_policy (then these samples)
 
-This repository is **samples and docs**, not the extension. Build the kernel from [rahiakil/pg-agent-policy](https://github.com/rahiakil/pg-agent-policy).
+This repository is **samples and docs**, not the extension. Build the kernel from [rahiakil/pg-agent-policy](https://github.com/rahiakil/pg-policy).
 
 ## Prerequisites
 
@@ -12,8 +12,8 @@ This repository is **samples and docs**, not the extension. Build the kernel fro
 ## Build and install the extension
 
 ```bash
-git clone https://github.com/rahiakil/pg-agent-policy.git
-cd pg-agent-policy
+git clone https://github.com/rahiakil/pg-policy.git
+cd pg-policy
 make
 make install
 ```

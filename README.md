@@ -1,24 +1,24 @@
 # pg-agent-policy-samples
 
-Runnable SQL samples, domain packs, PEP middleware, and user documentation for [`pg_agent_policy`](https://github.com/rahiakil/pg-agent-policy).
+Runnable SQL samples, domain packs, PEP middleware, and user documentation for [`pg_agent_policy`](https://github.com/rahiakil/pg-policy).
 
 > Not the Postgres catalog `pg_catalog.pg_policy` (RLS). This is agent/tool policy samples for the `pg_agent_policy` extension.
 
-This repository is the artifact companion to the working paper [Toward Policy Beside the Data](https://github.com/Agentic-Memory-Foundation/agentic-policy). The extension kernel lives in [rahiakil/pg-agent-policy](https://github.com/rahiakil/pg-agent-policy). Clone this tree for packs and examples:
+This repository is the artifact companion to the working paper [Toward Policy Beside the Data](https://github.com/Agentic-Memory-Foundation/agentic-policy). The extension kernel lives in [rahiakil/pg-agent-policy](https://github.com/rahiakil/pg-policy). Clone this tree for packs and examples:
 
 ```bash
-git clone git@github.com:Agentic-Memory-Foundation/pg-agent-policy-samples.git
+git clone git@github.com:Agentic-Memory-Foundation/pg-policy-samples.git
 ```
 
-HTTPS: https://github.com/Agentic-Memory-Foundation/pg-agent-policy-samples
+HTTPS: https://github.com/Agentic-Memory-Foundation/pg-policy-samples
 
 ## Prerequisites
 
 Install the extension first:
 
 ```bash
-git clone https://github.com/rahiakil/pg-agent-policy.git
-cd pg-agent-policy
+git clone https://github.com/rahiakil/pg-policy.git
+cd pg-policy
 make install
 psql -d mydb -c "CREATE EXTENSION pg_agent_policy;"
 ```
@@ -91,7 +91,7 @@ Catalog, `parse_apl`, and `evaluate` live in the extension (`sql/pg_agent_policy
 
 ## Related
 
-- Extension: https://github.com/rahiakil/pg-agent-policy
+- Extension: https://github.com/rahiakil/pg-policy
 - Working paper: https://github.com/Agentic-Memory-Foundation/agentic-policy
 
 License: [PostgreSQL License](LICENSE).
